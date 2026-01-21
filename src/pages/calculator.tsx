@@ -223,7 +223,7 @@ export default function Calculator() {
     };
 
     try {
-      const res = await fetch("https://20.119.101.162/calculate", {
+      const res = await fetch("https://cal.techfinna.com/calculate", {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },
