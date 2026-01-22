@@ -229,7 +229,7 @@ export default function Results() {
 
     <div class="card">
       <div class="row"><span>Total project budget</span><strong>${escapeHtml(formatCurrency(projectBudget || 0))}</strong></div>
-      <div class="row"><span>Estimated eligible funding</span><strong>${escapeHtml(fmtRange(estimatedMin, estimatedMax) || "—")}</strong></div>
+      <div class="row"><span>Estimated eligible funding</span><strong>${escapeHtml(String(estimatedMax))}</strong></div>
       <div class="row"><span>Grants</span><strong>${escapeHtml(formatCurrency(grantsBar || 0))}</strong></div>
       <div class="row"><span>Tax credits</span><strong>${escapeHtml(formatCurrency(taxBar || 0))}</strong></div>
       <div class="row"><span>Net cost</span><strong>${escapeHtml(formatCurrency(netBar || 0))}</strong></div>
@@ -475,7 +475,7 @@ export default function Results() {
                           Estimated eligible funding
                         </div>
                         <div className="text-lg font-bold text-slate-900 mt-1">
-                          {fmtRange(estimatedMin, estimatedMax)}
+                          ${Number(estimatedMin)}
                         </div>
                       </div>
                     ) : null}
@@ -577,7 +577,7 @@ export default function Results() {
                             Estimated amount
                           </div>
                           <div className="text-lg font-bold text-slate-900 mt-1">
-                            {fmtRange(estMin, estMax) || (estTyp ? formatCurrency(estTyp) : "—")}
+                            ${Number(estMin)}
                           </div>
                         </div>
 
